@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
-    public function login()
+    public function register()
     {
         //return view('auth.login');
-        echo "login";
+        echo "Register";
     }
 }

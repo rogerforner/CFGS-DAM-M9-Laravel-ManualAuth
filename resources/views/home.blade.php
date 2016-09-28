@@ -8,5 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+
+Usuari {{ $user->name }}
 </body>
 </html>

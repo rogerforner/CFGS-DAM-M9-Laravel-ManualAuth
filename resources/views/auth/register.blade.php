@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-s
+    Registre
 </body>
 </html>
