@@ -18,6 +18,7 @@ class HomeController extends Controller
         $row = $query->fetch();
         //dd($row);
 
+        //Funció estàtica que ens retorna el registre que li indiquem.
         $user=User::find(1);
         // 1) Aconseguir informació de la BD.
         // 2) Mostrar vista home passant info del usuari.
