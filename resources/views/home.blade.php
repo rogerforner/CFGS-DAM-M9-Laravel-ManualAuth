@@ -9,6 +9,6 @@
 </head>
 <body>
 
-Usuari {{ $user->name }}
+Hola {{ $user['name'] }}
 </body>
 </html>
