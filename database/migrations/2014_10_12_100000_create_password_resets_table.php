@@ -7,6 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePasswordResetsTable extends Migration
 {
     /**
+     * Pasar olímpicament.
      * Run the migrations.
      *
      * @return void

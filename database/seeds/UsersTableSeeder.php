@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //Funció que ens plena la taula Users.
-        $this->call(UsersTableSeeder::class);
+        //D'aquesta forma creem un usuari
+        factory(\App\User::class,100)->create();
     }
 }

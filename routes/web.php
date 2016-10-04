@@ -27,3 +27,4 @@ Route::get('/register', function() {
     return view('auth.register');
 });
 */
+//Per ser dinàmic canvio base de dades no codi.

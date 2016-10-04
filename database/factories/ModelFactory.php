@@ -10,7 +10,7 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-
+//Faker per inventar-nos dades aleatories o emails.(password=secret)
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
