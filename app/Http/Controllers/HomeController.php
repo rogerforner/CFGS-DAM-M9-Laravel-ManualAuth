@@ -19,13 +19,12 @@ class HomeController extends Controller
     /**
      * @return mixed
      */
-    function index()
+    public function index()
     {
-        /*
-        //Controlador només fa la seva feina.
-        $user=Auth::user();
-        return view('home')->withUser($user);
-*/
+//
+//        //Controlador només fa la seva feina.
+//        $user=Auth::user();
+//        return view('home')->withUser($user);
 //        $user = new \stdClass();
 //
 //    // Fem una pdo a partir del nostre fitxer sqlite.
@@ -51,6 +50,9 @@ class HomeController extends Controller
 //
         //Estat sessió
 
+//Obect cookie to user
+        $this->setUserCookie();
+
 
         if ($this->userIsAuthenticated()) {
             $user = $this->getUser();
@@ -68,22 +70,31 @@ class HomeController extends Controller
         {
             //Opció 1: query strings $_GET
             //dd(json_decode('{"name": "Roger","sn1":"Forner"}'));
-            dd(Hash::make(1));
-            $id =$_GET['user'];
-            //return json_decode($_GET['user']);
-            return User::findOrFail($id);
+//            dd(Hash::make(1));
+//            $id =$_GET['user'];
+//            //return json_decode($_GET['user']);
+//            return User::findOrFail($id);
+            $token= $_COOKIE['user'];
+            return User::where(["token" => $token])->first();
         }
 
         private
         function userIsAuthenticated()
         {
             //dd($_GET['user']);
-
-            if (isset($_GET['user'])) {
-                return true;
-            } else {
-                return false;
-            }
+//
+//            if (isset($_GET['user'])) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+            return isset($_COOKIE['user']) ? true :false;
         }
+
+    private function setUserCookie()
+    {
+        $user= User::findOrFail(1);
+        setcookie('user',$user->token);
+    }
 
 }
