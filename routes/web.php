@@ -22,9 +22,11 @@ Auth::logout();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/login', 'LoginController@login');
+Route::get('/login', 'LoginController@showLoginForm');
 
 Route::get('/register', 'RegisterController@register');
+
+Route::post('/login', 'LoginController@PostLogin');
 
 /*
 Route::get('/register', function() {

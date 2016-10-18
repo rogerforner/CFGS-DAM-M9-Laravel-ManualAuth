@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    Login
+<form action="/login" method="POST">
+    <input type="text" name="user">
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
 </body>
 </html>
