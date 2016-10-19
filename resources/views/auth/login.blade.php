@@ -10,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
+
+<div class="row">
 <div class="col-md-4"></div>
 <div class="col-md-4">
 <form action="/login" method="POST">
@@ -26,5 +28,6 @@
 </form>
 <div class="col-md-4"></div>
 <div class="col-md-4"></div>
+    </div>
 </body>
 </html>
