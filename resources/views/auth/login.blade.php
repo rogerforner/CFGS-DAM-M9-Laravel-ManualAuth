@@ -12,22 +12,22 @@
 <body>
 
 <div class="row">
-<div class="col-md-4"></div>
-<div class="col-md-4">
-<form action="/login" method="POST">
-    {{csrf_field()}}
-    <div class="form-group">
-        Usuari: <input type="text" name="user">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form action="/login" method="POST">
+            {{csrf_field()}}
+            <div class="form-group">
+            Email: <input type="text" name="email">
+            </div>
+            <div class="form-group">
+            Password: <input type="password" name="password">
+            </div>
+            <div class="row text-center">
+                <input type="submit" value="Login" class="btn btn-danger" name="login">
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        Password: <input type="password" name="password">
-    </div>
-    <div class="row">
-        <input type="submit" value="Login" class="btn btn-danger" name="login">
-    </div>
-</form>
-<div class="col-md-4"></div>
-<div class="col-md-4"></div>
-    </div>
+    <div class="col-md-4"></div>
+</div>
 </body>
 </html>
