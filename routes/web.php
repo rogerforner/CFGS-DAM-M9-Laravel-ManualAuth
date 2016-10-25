@@ -16,17 +16,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tasques', function () {
+    return view('tasques');
+});
+
+//PAS 1: Middleware? Com protegir pàgines?
+
+
 //To logout.
 
-Auth::logout();
-
-Route::get('/home', 'HomeController@index');
-
-Route::get('/login', 'LoginController@showLoginForm');
-
-Route::get('/register', 'RegisterController@register');
-
-Route::post('/login', 'LoginController@PostLogin');
+//Auth::logout();
+//
+//Route::get('/home', 'HomeController@index');
+//
+//Route::get('/login', 'LoginController@showLoginForm');
+//
+//Route::get('/register', 'RegisterController@register');
+//
+//Route::post('/login', 'LoginController@PostLogin');
 
 /*
 Route::get('/register', function() {
