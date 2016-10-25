@@ -12,14 +12,34 @@
 */
 
 //Clousure o funció anònima, funció que no té nom i per tant no pots cridar-la  a un altre lloc.
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasques', function () {
-    return view('tasques');
+//$user= User::findOrFail(1);
+//setcookie('user',$user->token);
+
+//Container
+//$this->app->bind(
+//    Guard::class, ParameterGuard::class
+//);
+
+$this->app->bind(
+    Guard::class, ParameterGuard::class
+);
+
+Route::group(['middleware' => 'manualauth'], function () {
+    Route::get('/tasques', function () {
+        return view('tasques');
+    });
 });
 
+
+Route::get('/login', function () {
+    return view('login');
+});
 //PAS 1: Middleware? Com protegir pàgines?
 
 

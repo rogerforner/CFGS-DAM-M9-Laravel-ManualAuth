@@ -88,7 +88,7 @@ class HomeController extends Controller
 //            } else {
 //                return false;
 //            }
-            return isset($_COOKIE['user']) ? true : false ;
+            //return isset($_COOKIE['user']) ? true : false ;
         }
 
     private function setUserCookie()
