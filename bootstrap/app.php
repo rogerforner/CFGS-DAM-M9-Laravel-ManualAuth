@@ -11,6 +11,7 @@
 |
 */
 
+//tota l'aplicació laravel està guardada dins aquesta variable.
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );

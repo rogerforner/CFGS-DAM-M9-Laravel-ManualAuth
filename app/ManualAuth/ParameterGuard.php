@@ -5,6 +5,9 @@
  * Date: 25/10/16
  * Time: 20:26
  */
+
+namespace App\ManualAuth;
+
 use Illuminate\Http\Request;
 
 class ParameterGuard implements Guard
@@ -30,5 +33,16 @@ class ParameterGuard implements Guard
            return true;
        }
     return false;
+
+
     }
+
+    public function validate(array $credentials){
+        return true;
+    }
+
+    public function setUser($user){
+        //Implementar set user
+    }
+
 }

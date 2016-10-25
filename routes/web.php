@@ -26,9 +26,6 @@ Route::get('/', function () {
 //    Guard::class, ParameterGuard::class
 //);
 
-$this->app->bind(
-    Guard::class, ParameterGuard::class
-);
 
 Route::group(['middleware' => 'manualauth'], function () {
     Route::get('/tasques', function () {
@@ -40,6 +37,10 @@ Route::group(['middleware' => 'manualauth'], function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/login', 'LoginController@showLoginForm');
+Route::post('/login', 'LoginController@login');
+
 //PAS 1: Middleware? Com protegir pàgines?
 
 
