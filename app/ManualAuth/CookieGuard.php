@@ -18,10 +18,10 @@ class CookieGuard implements Guard
     /**
      * ManualGuard constructor.
      */
-//    public function __construct(UserProvider $provider)
-//    {
-//        $this->provider=$provider;
-//    }
+    public function __construct(UserProvider $provider)
+    {
+        $this->provider=$provider;
+    }
 
     public function check(){
 

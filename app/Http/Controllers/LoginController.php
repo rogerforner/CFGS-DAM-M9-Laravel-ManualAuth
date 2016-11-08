@@ -28,7 +28,7 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-
+    //DEPENDENCY INJECTION.
     public function login(Request $request)
     {
         $this->validateLogin($request);
