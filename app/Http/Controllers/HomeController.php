@@ -91,10 +91,5 @@ class HomeController extends Controller
             //return isset($_COOKIE['user']) ? true : false ;
         }
 
-    private function setUserCookie()
-    {
-        $user= User::findOrFail(1);
-        setcookie('user',$user->token);
-    }
 
 }
