@@ -9,11 +9,13 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Session;
 
 class LoginController extends Controller
 {
-    protected $guard;
     //dependency injections
+    protected $guard;
+
     protected $userprovider;
 
     /**
@@ -48,7 +50,7 @@ class LoginController extends Controller
             $this->guard->setUser($this->userprovider->getUserByCredentials($credentials));
             return redirect('home');
         }
-        \Session::flash('errors',collect(['Login incorrecte']));
+        Session::flash('errors',collect(['Login incorrecte']));
         return redirect('login');
     }
 

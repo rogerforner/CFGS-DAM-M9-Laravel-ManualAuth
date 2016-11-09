@@ -9,7 +9,7 @@
 
 namespace App\ManualAuth;
 
-use Illuminate\Contracts\Auth\UserProvider;
+use App\ManualAuth\UserProviders\UserProvider;
 
 class CookieGuard implements Guard
 {
@@ -17,6 +17,7 @@ class CookieGuard implements Guard
 
     /**
      * ManualGuard constructor.
+     * @param $provider
      */
     public function __construct(UserProvider $provider)
     {
@@ -25,7 +26,7 @@ class CookieGuard implements Guard
 
     public function check(){
 
-        return isset($_COOKIE['user']) ? true : false ;
+        return isset($_COOKIE['user']) ? true : false;
 
     }
 

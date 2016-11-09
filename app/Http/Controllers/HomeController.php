@@ -51,7 +51,7 @@ class HomeController extends Controller
         //Estat sessió
 
 //Obect cookie to user
-        $this->setUserCookie();
+        //$this->setUserCookie();
 
 
         if ($this->userIsAuthenticated()) {
@@ -78,9 +78,9 @@ class HomeController extends Controller
             return User::where(["token" => $token])->first();
         }
 
-        private
-        function userIsAuthenticated()
-        {
+//        private
+//        function userIsAuthenticated()
+//        {
             //dd($_GET['user']);
 //
 //            if (isset($_GET['user'])) {
@@ -89,7 +89,7 @@ class HomeController extends Controller
 //                return false;
 //            }
             //return isset($_COOKIE['user']) ? true : false ;
-        }
+//        }
 
 
 }

@@ -10,5 +10,12 @@ namespace App\ManualAuth\UserProviders;
 interface UserProvider
 {
     public function validate(array $credentials);
+
     public function getUserByCredentials(array $credentials);
+
+    //todo: afegir reme,ber token i token ja que no el pasa l'usuari i injectar userprovider i el guard alr egister com al login.
+
+    public function setUser($data);
+    //'remember_token' => str_random(10),
+//'token' => bcrypt(str_random(10)),
 }

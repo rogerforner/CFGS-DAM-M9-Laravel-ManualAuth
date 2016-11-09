@@ -5,7 +5,6 @@ namespace App\ManualAuth\UserProviders;
 
 use App\User;
 use Hash;
-use Session;
 
 class EloquentUserProvider implements UserProvider
 {
@@ -14,22 +13,24 @@ class EloquentUserProvider implements UserProvider
     {
         $user= $this->getUserByCredentials($credentials);
 
+        if(!$user) {
+            return false;
+        }
 
     //SALTS
         if ( Hash::check($credentials['password'], $user->password) ) {
             return true;
         }
-            Session::flash('errors',collect(["Login incorrecte"]));
+            //Session::flash('errors',collect(["Login incorrecte"]));
             return false;
     }
 
     public function getUserByCredentials(array $credentials)
     {
         try {
-        User::where(
-            ["email" => $credentials['email']])->firstOrFail();
+            return User::where(["email" => $credentials['email']])->firstOrFail();
         } catch (\Exception $e) {
-            Session::flash('errors',collect(["Usuari no trobat a la base de dades"]));
+            //Session::flash('errors',collect(["Usuari no trobat a la base de dades"]));
             return false;
         }
     }
