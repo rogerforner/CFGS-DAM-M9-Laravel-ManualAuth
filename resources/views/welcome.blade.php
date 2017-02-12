@@ -85,7 +85,9 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
-                <br/>
+                <div class="title m-b-md">
+                    Laravel Manual Auth
+                </div>
                 <div class="links">
                     <a href="login">Login</a>
                     <a href="register">Registre</a>
