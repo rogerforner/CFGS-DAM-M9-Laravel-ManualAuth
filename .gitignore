@@ -1,8 +1,8 @@
-/node_modules
-/public/storage
-/vendor
-/.idea
-Homestead.json
-Homestead.yaml
-.env
+build
+composer.lock
+docs
+vendor
+node_modules
 _ide_helper.php
+.idea
+
