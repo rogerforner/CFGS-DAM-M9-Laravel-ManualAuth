@@ -25,6 +25,10 @@ class EloquentUserProvider implements UserProvider
             return false;
     }
 
+    /**
+     * @param array $credentials
+     * @return bool
+     */
     public function getUserByCredentials(array $credentials)
     {
         try {
@@ -33,5 +37,17 @@ class EloquentUserProvider implements UserProvider
             //Session::flash('errors',collect(["Usuari no trobat a la base de dades"]));
             return false;
         }
+    }
+
+        public function setUser(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'remember_token' => str_random(10),
+            'token' => bcrypt(str_random(10))
+        ]);
+
     }
 }

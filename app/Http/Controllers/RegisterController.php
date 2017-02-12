@@ -2,11 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\ManualAuth\Guard;
+use App\ManualAuth\UserProviders\UserProvider;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    protected $userprovider;
+    //Dependency Injection
+    protected $userProvider;
+    protected $guard;
+
+    /**
+     * RegisterController constructor.
+     * @param $userProvider
+     * @param $guard
+     */
+    public function __construct(UserProvider $userProvider, Guard $guard)
+    {
+        $this->userProvider = $userProvider;
+        $this->guard = $guard;
+    }
+
 
     public function showRegisterForm()
     {
@@ -17,13 +33,15 @@ class RegisterController extends Controller
     {
         $this->validateRegister($request);
         $credentials = $request->only(['name','email','password']);
-        $this->userprovider->createUser($credentials);
+        $user = $this->userProvider->setUser($credentials);
+        $this->guard->setUser($user);
+        return redirect('home');
     }
 
     private function validateRegister($request)
     {
         $this->validate($request,[
-            'nom'=> 'required|max:255',
+            'name'=> 'required|max:255',
             'email' => 'email|required|max:255|unique:users',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required'

@@ -47,6 +47,11 @@ Route::post('/login', 'LoginController@login');
 Route::get('/register', 'RegisterController@showRegisterForm');
 Route::post('/register', 'RegisterController@register');
 
+Route::post('/logout', function() {
+    return redirect('/home')->withCookie(Cookie::forget('cookie_name'));
+});
+
+
 //PAS 1: Middleware? Com protegir pàgines?
 
 

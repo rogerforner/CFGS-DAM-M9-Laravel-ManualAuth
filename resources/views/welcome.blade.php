@@ -85,6 +85,11 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <br/>
+                <div class="links">
+                    <a href="login">Login</a>
+                    <a href="register">Registre</a>
+                </div>
             </div>
         </div>
     </body>
