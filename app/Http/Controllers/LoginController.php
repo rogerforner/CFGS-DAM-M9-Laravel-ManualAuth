@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ManualAuth\Guard;
 use App\ManualAuth\UserProviders\UserProvider;
 use App\User;
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 

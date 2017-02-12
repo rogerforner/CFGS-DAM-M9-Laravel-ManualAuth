@@ -26,11 +26,16 @@
         </div>
     @endif
     <div class="row text-center">
-        <h3>Benvingut</h3>
-        <form action="/logout" method="GET">
-            <input type="submit" value="Logout" class="btn btn-primary" name="logout">
-        </form>
+        <h3>Veure les tasques</h3>
+        <a class="btn btn-primary" href="/tasques">Tasques</a>
+
+        <h3>Sortir de la sessió</h3>
+        <a class="btn btn-primary" href="/logout">Logout</a>
+
+        <h3>Pàgina principal</h3>
+        <a class="btn btn-primary" href="/">Welcome</a>
     </div>
+
 </body>
 </html>
 @endsection

@@ -29,21 +29,26 @@
             <div class="form-group">
                 Name: <input type="text" name="name">
             </div>
+
             <div class="form-group">
                 Email: <input type="text" name="email">
             </div>
+
             <div class="form-group">
                 Password: <input type="password" name="password">
             </div>
+
             <div class="form-group">
                 Repeat Password: <input type="password" name="password_confirmation">
             </div>
-            <div class="row text-center">
-                <input type="submit" value="Register" class="btn btn-primary" name="login">
+
+            <div class="center-block">
+                <input type="submit" value="Register" class="btn btn-primary" name="register">
             </div>
         </form>
+            <a class="btn btn-danger" href="/login">Login</a>
+            <a class="btn btn-warning" href="/">Welcome</a>
     </div>
-    <div class="col-md-4"></div>
 </div>
 </body>
 </html>

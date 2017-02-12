@@ -26,18 +26,21 @@
     <div class="col-md-4">
         <form action="/login" method="POST">
             {{csrf_field()}}
+
             <div class="form-group">
-            Email: <input type="text" name="email">
+                Email: <input type="text" name="email">
             </div>
+
             <div class="form-group">
-            Password: <input type="password" name="password">
+                Password: <input type="password" name="password">
             </div>
-            <div class="row text-center">
+
+            <div class="center-block">
                 <input type="submit" value="Login" class="btn btn-danger" name="login">
             </div>
         </form>
+        <a class="btn btn-primary" href="/register">Register</a>
     </div>
-    <div class="col-md-4"></div>
 </div>
 </body>
 </html>
